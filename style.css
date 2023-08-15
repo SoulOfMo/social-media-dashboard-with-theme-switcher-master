@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
 :root {
     --lime-green: hsl(163, 72%, 41%);
     --bright-red: hsl(356, 69%, 56%);
@@ -19,4 +42,24 @@
     --lightTheme-toggle: hsl(230, 22%, 74%);
     --ff-size: 14px;
     --ff-family: 'Inter', sans-serif;
+}
+
+/* general styling */
+
+body {
+    font-family: var(--ff-family);
+    font-size: var(--ff-size);
+}
+
+main {
+    display: grid;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.facebook .username::before {
+    content: url(./images/icon-facebook.svg);
+    margin-right: 0.8em;
+    vertical-align: bottom;
 }
