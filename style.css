@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --youtube: hsl(348, 97%, 39%);
+    --background-color-dark: hsl(230, 17%, 14%);
+    --topBG-pattern-dark: hsl(232, 19%, 15%);
+    --cardBG-dark: hsl(228, 28%, 20%);
+    --Desaturated-textBlue-dark: hsl(228, 34%, 66%);
+    --text-darkTheme: hsl(0, 0%, 100%);
+    --background-color-light: hsl(0, 0%, 100%);
+    --topBG-pattern-light: hsl(225, 100%, 98%);
+    --cardBG-light: hsl(227, 47%, 96%);
+    --lightTheme-grayishBlue-text: hsl(228, 12%, 44%);
+    --lightTheme-darkBlue-text: hsl(230, 17%, 14%);
+    --lightTheme-toggle: hsl(230, 22%, 74%);
+    --ff-size: 14px;
+    --ff-family: 'Inter', sans-serif;
+}
