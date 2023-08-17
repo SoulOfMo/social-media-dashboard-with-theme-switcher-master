@@ -23,25 +23,36 @@ img {
     display: block;
     max-width: 100%;
 }
+
 :root {
     --lime-green: hsl(163, 72%, 41%);
     --bright-red: hsl(356, 69%, 56%);
     --facebook: hsl(208, 92%, 53%);
     --twitter: hsl(203, 89%, 53%);
     --youtube: hsl(348, 97%, 39%);
-    --background-color-dark: hsl(230, 17%, 14%);
-    --topBG-pattern-dark: hsl(232, 19%, 15%);
-    --cardBG-dark: hsl(228, 28%, 20%);
-    --Desaturated-textBlue-dark: hsl(228, 34%, 66%);
-    --text-darkTheme: hsl(0, 0%, 100%);
-    --background-color-light: hsl(0, 0%, 100%);
-    --topBG-pattern-light: hsl(225, 100%, 98%);
-    --cardBG-light: hsl(227, 47%, 96%);
-    --lightTheme-grayishBlue-text: hsl(228, 12%, 44%);
-    --lightTheme-darkBlue-text: hsl(230, 17%, 14%);
-    --lightTheme-toggle: hsl(230, 22%, 74%);
+    --insta: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     --ff-size: 14px;
     --ff-family: 'Inter', sans-serif;
+    --ff--weight-md: 400;
+    --ff-weight--bd: 700;
+    /* LIGHT THEME COLOR*/
+    --background-color: hsl(0, 0%, 100%);
+    --topBG-pattern: hsl(225, 100%, 98%);
+    --cardBG: hsl(227, 47%, 96%);
+    --text-color: hsl(228, 12%, 44%);
+    --text-color2: hsl(230, 17%, 14%);
+    --toggle: hsl(230, 22%, 74%);
+}
+
+/* DARK THEME COLOR */
+
+.dark-theme {
+    --background-color: hsl(230, 17%, 14%);
+    --topBG-pattern: hsl(232, 19%, 15%);
+    --cardBG: hsl(228, 28%, 20%);
+    --text-color: hsl(228, 34%, 66%);
+    --text-color2: hsl(0, 0%, 100%);
+    --toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
 /* general styling */
@@ -49,17 +60,166 @@ img {
 body {
     font-family: var(--ff-family);
     font-size: var(--ff-size);
+    /* overflow: hidden; */
+    transition: 0.5s;
+    background-color: var(--background-color);
 }
 
 main {
+    position: relative;
     display: grid;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
-.facebook .username::before {
+p {
+    color: var(--text-color);
+    font-weight: var(--ff-weight--bd);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--topBG-pattern);
+    padding: 3em 10em 10em;
+    justify-content: space-between;
+}
+
+header h1 {
+    color: var(--text-color2);
+}
+
+header p {
+    margin-right: 1em;
+}
+
+.dark-mode {
+    display: flex;
+    align-items: center;
+}
+
+.toggle {
+    position: relative;
+    width: 4em;
+    padding: 0.2em;
+    margin-right: 1em;
+    height: 2em;
+    border-radius: 1em;
+    background: var(--toggle);
+}
+
+.toggle-button {
+    position: absolute;
+    width: 1.6em;
+    height: 1.6em;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.toggle-active {
+    translate: 28px;
+}
+
+.followers {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    margin-top: 120px;
+}
+
+.follower {
+    text-align: center;
+    background-color: var(--cardBG);
+    padding: 2em 4em;
+    transition: 1s;
+}
+
+.follower:is(:active, :hover) {
+    background-color: var(--text-color2);
+    transform: translateY(20px);
+}
+
+.follower img {
+    display: inline;
+    margin-right: 0.3em;
+}
+
+.follower img[alt="up-icon"], img[alt="down-icon"] {
+    vertical-align: middle;
+    margin-right: 0.1em;
+}
+
+p.username,
+p.today {
+    display: inline;
+    vertical-align: top;
+}
+
+.username+P {
+    color: var(--text-color2);
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+
+.follower span {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-color);
+    margin-bottom: 1em;
+}
+
+.follower.facebook. {
+    border-top: 4px solid var(--facebook);
+    border-radius: 0.5em;
+}
+
+.follower.twitter. {
+    border-top: 4px solid var(--twitter);
+    border-radius: 0.5em;
+}
+
+.follower.insta. {
+    border-top: 4px solid;
+    border-radius: 0.5em;
+    border-image: linear-gradient(0.25turn, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) 10;
+    width: 100%;
+}
+
+.follower.youtube. {
+    border-top: 4px solid var(--youtube);
+    border-radius: 0.5em;
+}
+
+.facebook p:last-child,
+.twitter p:last-child,
+.insta p:last-child {
+    color: var(--lime-green);
+}
+
+.youtube p:last-child {
+    color: var(--youtube);
+}
+
+/* Overview Section */
+
+.overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* .facebook .username::before {
     content: url(./images/icon-facebook.svg);
     margin-right: 0.8em;
-    vertical-align: bottom;
-}
+} */
+
+
+
+/* DARK THEME */
