@@ -86,7 +86,7 @@ header {
     display: flex;
     align-items: center;
     background-color: var(--topBG-pattern);
-    padding: 3em 10em 10em;
+    padding: 3em 11em 10em;
     justify-content: space-between;
 }
 
@@ -142,8 +142,9 @@ header p {
 }
 
 .follower:is(:active, :hover) {
-    background-color: var(--text-color2);
+    background-color: var(--toggle);
     transform: translateY(20px);
+    cursor: pointer;
 }
 
 .follower img {
@@ -151,7 +152,8 @@ header p {
     margin-right: 0.3em;
 }
 
-.follower img[alt="up-icon"], img[alt="down-icon"] {
+.follower img[alt="up-icon"],
+img[alt="down-icon"] {
     vertical-align: middle;
     margin-right: 0.1em;
 }
@@ -176,24 +178,24 @@ p.today {
     margin-bottom: 1em;
 }
 
-.follower.facebook. {
+.follower.facebook {
     border-top: 4px solid var(--facebook);
     border-radius: 0.5em;
 }
 
-.follower.twitter. {
+.follower.twitter {
     border-top: 4px solid var(--twitter);
     border-radius: 0.5em;
 }
 
-.follower.insta. {
+.follower.insta {
     border-top: 4px solid;
     border-radius: 0.5em;
     border-image: linear-gradient(0.25turn, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) 10;
     width: 100%;
 }
 
-.follower.youtube. {
+.follower.youtube {
     border-top: 4px solid var(--youtube);
     border-radius: 0.5em;
 }
@@ -205,7 +207,12 @@ p.today {
 }
 
 .youtube p:last-child {
-    color: var(--youtube);
+    color: var(--bright-red);
+}
+
+.followers + h1 {
+    color: var(--text-color);
+    margin: 1.5em 0 0.7em;
 }
 
 /* Overview Section */
@@ -213,13 +220,72 @@ p.today {
 .overview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
 }
 
-/* .facebook .username::before {
-    content: url(./images/icon-facebook.svg);
-    margin-right: 0.8em;
-} */
+.overview div {
+    background-color: var(--cardBG);
+}
 
+.overview div {
+    padding: 2em 1em;
+}
+
+.overview p, .number {
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+.overview .number {
+    padding: unset;
+    margin-top: 1em;
+    font-size: 2em;
+    align-items: center;
+}
+
+.number span  {
+    font-size: 0.5em;
+}
+.number p {
+    color: var(--text-color2);
+}
+.number span p, img {
+    display: inline;
+}
+
+.number span img {
+    vertical-align: middle;
+}
+
+.overview .likes span p {
+    color: var(--bright-red);
+}
 
 
 /* DARK THEME */
+
+/* Mobile  */
+@media (max-width:415px) {
+    main{
+        margin: 0 10%;
+    }
+    header {
+        position: relative;
+        flex-direction: column;
+        padding: 1em 2em 0;
+    }
+
+    hr {
+        width: 80%;
+    }
+
+    .followers{
+        grid-template-columns: 1fr;
+        /* margin-top: 330px; */
+    }
+
+    .dark-mode {
+        justify-content: space-between;
+    }
+}

@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/SoulOfMo/social-media-dashboard-with-theme-switcher-master)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://soulofmo.github.io/social-media-dashboard-with-theme-switcher-master/)
 
 ## My process
 
